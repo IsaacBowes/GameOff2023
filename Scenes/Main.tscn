@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://bkxcrd7sbywle"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_feghq"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_exja0"]
+size = Vector3(500, 20, 1)
+
+[sub_resource type="Gradient" id="Gradient_8wlhu"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_2q858"]
+gradient = SubResource("Gradient_8wlhu")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xsq1r"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="."]
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
+position = Vector2(330, -340)
+scale = Vector2(30, 1)
+shape = SubResource("RectangleShape2D_feghq")
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="."]
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D3"]
+position = Vector2(330, -760)
+scale = Vector2(30, 1)
+shape = SubResource("RectangleShape2D_feghq")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(550, 630)
+mesh = SubResource("BoxMesh_exja0")
+texture = SubResource("GradientTexture1D_2q858")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="MeshInstance2D"]
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MeshInstance2D/RigidBody2D"]
+shape = SubResource("RectangleShape2D_xsq1r")
