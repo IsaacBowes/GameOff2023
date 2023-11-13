@@ -1,57 +1,126 @@
-[gd_scene load_steps=9 format=3 uid="uid://bkxcrd7sbywle"]
+[gd_scene load_steps=4 format=3 uid="uid://bkxcrd7sbywle"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_feghq"]
+[ext_resource type="Texture2D" uid="uid://curql4wd603ly" path="res://Assets/Art/bloo.png" id="1_tmm2m"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_exja0"]
-size = Vector3(500, 20, 1)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uw6cy"]
+size = Vector2(500, 15)
 
-[sub_resource type="Gradient" id="Gradient_8wlhu"]
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_2q858"]
-gradient = SubResource("Gradient_8wlhu")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xsq1r"]
-
-[sub_resource type="Gradient" id="Gradient_eit26"]
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_wc06j"]
-gradient = SubResource("Gradient_eit26")
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_qchdg"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_tsfog"]
+radius = 27.0
 
 [node name="Node2D" type="Node2D"]
 
-[node name="RigidBody2D2" type="RigidBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(620, 620)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+scale = Vector2(100, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_uw6cy")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -7.0
+offset_right = 250.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.156863, 0.517647, 0.34902, 1)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(378, 362)
 rotation = 1.5708
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
+scale = Vector2(100, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+shape = SubResource("RectangleShape2D_uw6cy")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -7.0
+offset_right = 250.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.156863, 0.517647, 0.34902, 1)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(862, 362)
+rotation = 1.5708
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3"]
+scale = Vector2(100, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+shape = SubResource("RectangleShape2D_uw6cy")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D3"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -7.0
+offset_right = 250.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.156863, 0.517647, 0.34902, 1)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(623, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("CircleShape2D_tsfog")
+debug_color = Color(0, 0.596078, 0.717647, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_tmm2m")
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="."]
+position = Vector2(723, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D4"]
+shape = SubResource("CircleShape2D_tsfog")
+debug_color = Color(0, 0.596078, 0.717647, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D4"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_tmm2m")
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="."]
+position = Vector2(583, 569)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
-position = Vector2(330, -340)
-scale = Vector2(30, 1)
-shape = SubResource("RectangleShape2D_feghq")
+shape = SubResource("CircleShape2D_tsfog")
+debug_color = Color(0, 0.596078, 0.717647, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D2"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_tmm2m")
 
 [node name="RigidBody2D3" type="RigidBody2D" parent="."]
-rotation = 1.5708
+position = Vector2(680, 569)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D3"]
-position = Vector2(330, -760)
-scale = Vector2(30, 1)
-shape = SubResource("RectangleShape2D_feghq")
+shape = SubResource("CircleShape2D_tsfog")
+debug_color = Color(0, 0.596078, 0.717647, 0.419608)
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-position = Vector2(550, 630)
-mesh = SubResource("BoxMesh_exja0")
-texture = SubResource("GradientTexture1D_2q858")
-
-[node name="RigidBody2D" type="RigidBody2D" parent="MeshInstance2D"]
-gravity_scale = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MeshInstance2D/RigidBody2D"]
-shape = SubResource("RectangleShape2D_xsq1r")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("GradientTexture1D_wc06j")
-
-[node name="RigidBody2D" type="RigidBody2D" parent="Sprite2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/RigidBody2D"]
-shape = SubResource("CircleShape2D_qchdg")
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D3"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_tmm2m")
