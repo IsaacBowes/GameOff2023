@@ -1,12 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://bkxcrd7sbywle"]
+[gd_scene load_steps=7 format=3 uid="uid://bkxcrd7sbywle"]
 
 [ext_resource type="Texture2D" uid="uid://curql4wd603ly" path="res://Assets/Art/bloo.png" id="1_tmm2m"]
+[ext_resource type="Script" path="res://Scenes/Controller.gd" id="2_edyvw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uw6cy"]
 size = Vector2(500, 15)
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_orisn"]
+friction = 0.1
+bounce = 0.1
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_tsfog"]
 radius = 27.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j4rub"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -81,8 +88,23 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.517647, 0.34902, 1)
 
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(870, 233)
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+shape = SubResource("RectangleShape2D_uw6cy")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+position = Vector2(370, 233)
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+shape = SubResource("RectangleShape2D_uw6cy")
+
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
-position = Vector2(623, 0)
+position = Vector2(631, 276)
+physics_material_override = SubResource("PhysicsMaterial_orisn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource("CircleShape2D_tsfog")
@@ -93,7 +115,8 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_tmm2m")
 
 [node name="RigidBody2D4" type="RigidBody2D" parent="."]
-position = Vector2(723, 16)
+position = Vector2(731, 292)
+physics_material_override = SubResource("PhysicsMaterial_orisn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D4"]
 shape = SubResource("CircleShape2D_tsfog")
@@ -124,3 +147,24 @@ debug_color = Color(0, 0.596078, 0.717647, 0.419608)
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D3"]
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_tmm2m")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(623, 16)
+motion_mode = 1
+script = ExtResource("2_edyvw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_j4rub")
+
+[node name="ColorRect" type="ColorRect" parent="CharacterBody2D"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
