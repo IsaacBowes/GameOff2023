@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmmpnanllo2jr"]
+
+[ext_resource type="Texture2D" uid="uid://b47dc3vl30rj5" path="res://Assets/Art/red.png" id="1_mjrg1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ljs02"]
+radius = 35.0
+
+[node name="Drop4" type="RigidBody2D"]
+position = Vector2(646, 95)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_mjrg1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ljs02")
