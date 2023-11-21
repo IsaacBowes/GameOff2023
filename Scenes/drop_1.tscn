@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://iv6j7rj4xdc8"]
+
+[ext_resource type="Texture2D" uid="uid://curql4wd603ly" path="res://Assets/Art/bloo.png" id="1_0r8a0"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_orisn"]
+friction = 0.1
+bounce = 0.1
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tsfog"]
+radius = 27.0
+
+[node name="Drop" type="RigidBody2D"]
+position = Vector2(631, 276)
+physics_material_override = SubResource("PhysicsMaterial_orisn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_tsfog")
+debug_color = Color(0, 0.596078, 0.717647, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_0r8a0")
