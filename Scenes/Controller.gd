@@ -4,8 +4,8 @@ const SPEED = 300.0
 var currentMorph = null
 var nextMorph = null
 var morphList = []
-var availableMorphs = [preload("res://Scenes/drop_1.tscn")]
-var randomMorph = RandomNumberGenerator.new()
+var availableMorphs = [preload("res://Scenes/drop_1.tscn"),("res://Scenes/drop_2.tscn")]
+
 
 func _ready():
 	for scene in availableMorphs:
@@ -36,5 +36,10 @@ func _physics_process(delta):
 
 func spawnMorphs():
 	if morphList.is_empty():
+		morphList.resize(1)
+		morphList.fill(availableMorphs.pick_random())
 		
+func removeMorph():
+	morphList.remove_at(0)
+	morphList.insert(1, availableMorphs.pick_random())
 
