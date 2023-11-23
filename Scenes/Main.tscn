@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bkxcrd7sbywle"]
+[gd_scene load_steps=7 format=3 uid="uid://bkxcrd7sbywle"]
 
 [ext_resource type="PackedScene" uid="uid://iv6j7rj4xdc8" path="res://Scenes/drop_1.tscn" id="1_j5jj3"]
 [ext_resource type="Script" path="res://Scenes/Controller.gd" id="2_edyvw"]
 [ext_resource type="PackedScene" uid="uid://cmmpnanllo2jr" path="res://Scenes/drop_2.tscn" id="3_reolg"]
+[ext_resource type="PackedScene" uid="uid://fp3c5cqqo170" path="res://Scenes/ui.tscn" id="4_nuovi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j4rub"]
 
@@ -130,3 +131,5 @@ shape = SubResource("RectangleShape2D_uw6cy")
 
 [node name="Drop4" parent="." instance=ExtResource("3_reolg")]
 position = Vector2(639, 135)
+
+[node name="Control" parent="." instance=ExtResource("4_nuovi")]

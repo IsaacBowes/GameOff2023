@@ -3,8 +3,11 @@ extends CharacterBody2D
 const SPEED = 300.0
 var currentMorph = null
 var nextMorph = null
+var currentMorphImage: Sprite2D
+var nextMorphImage: Sprite2D
 var morphList = []
 var availableMorphs = [preload("res://Scenes/drop_1.tscn"),("res://Scenes/drop_2.tscn")]
+@onready var control = $"../Control"
 
 
 func _ready():
@@ -24,6 +27,9 @@ func _physics_process(delta):
 
 	currentMorph = morphList[0]
 	nextMorph = morphList[1]
+	currentMorphImage = currentMorph.texture
+	nextMorphImage = nextMorph.texture
+	
 
 	if currentMorph == null:
 		spawnMorphs()
